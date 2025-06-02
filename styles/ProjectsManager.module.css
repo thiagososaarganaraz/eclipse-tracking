@@ -1,0 +1,151 @@
+.projectsManager {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin: 0;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.projectsList {
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.projectsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.projectsTable th {
+  background: var(--background);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--primary-text);
+  border-bottom: 1px solid var(--accent);
+}
+
+.projectRow {
+  border-bottom: 1px solid var(--accent);
+  transition: background-color 0.2s ease;
+}
+
+.projectRow:hover {
+  background: var(--background);
+}
+
+.projectRow:last-child {
+  border-bottom: none;
+}
+
+.projectRow td {
+  padding: 1rem;
+  color: var(--primary-text);
+}
+
+.projectName {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.colorDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.billableIcon {
+  color: var(--success);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--accent);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: var(--secondary-text);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .projectsManager {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .projectsTable {
+    font-size: 0.875rem;
+  }
+
+  .projectsTable th,
+  .projectRow td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

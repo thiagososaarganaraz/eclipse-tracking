@@ -1,0 +1,106 @@
+:root {
+  /* Light Theme */
+  --light-background: #f9fafb;
+  --light-surface: #ffffff;
+  --light-primary-text: #1f2937;
+  --light-secondary-text: #4b5563;
+  --light-accent: #fa8072;
+  --light-success: #10b981;
+  --light-warning: #f59e0b;
+  --light-error: #ef4444;
+
+  /* Dark Theme */
+  --dark-background: #1e1e2e;
+  --dark-surface: #2a2a3c;
+  --dark-primary-text: #ffffff;
+  --dark-secondary-text: #c3c3d1;
+  --dark-accent: #fa8072;
+  --dark-success: #6ee7b7;
+  --dark-warning: #fcd34d;
+  --dark-error: #f87171;
+
+  /* Default to light theme */
+  --background: var(--light-background);
+  --surface: var(--light-surface);
+  --primary-text: var(--light-primary-text);
+  --secondary-text: var(--light-secondary-text);
+  --accent: var(--light-accent);
+  --success: var(--light-success);
+  --warning: var(--light-warning);
+  --error: var(--light-error);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--primary-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Dark theme class */
+.dark-theme {
+  --background: var(--dark-background);
+  --surface: var(--dark-surface);
+  --primary-text: var(--dark-primary-text);
+  --secondary-text: var(--dark-secondary-text);
+  --accent: var(--dark-accent);
+  --success: var(--dark-success);
+  --warning: var(--dark-warning);
+  --error: var(--dark-error);
+}
+
+/* Animation for time entry */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

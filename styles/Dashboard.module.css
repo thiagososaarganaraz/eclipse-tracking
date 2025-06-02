@@ -1,0 +1,71 @@
+.dashboard {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timerSection {
+  margin-bottom: 2rem;
+}
+
+.viewToggle {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.viewButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--accent);
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewButton:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.viewButton.active {
+  background: var(--accent);
+  color: white;
+}
+
+.entriesSection {
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin: 0 0 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+  }
+
+  .timerSection {
+    margin-bottom: 1.5rem;
+  }
+
+  .viewToggle {
+    margin-bottom: 1rem;
+  }
+
+  .entriesSection {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,264 @@
+.calendarContainer {
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendarControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.controlButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--accent);
+  background: var(--background);
+  color: var(--accent);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controlButton:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.todayButton {
+  padding: 0 1rem;
+  height: 36px;
+  border: 1px solid var(--accent);
+  background: var(--background);
+  color: var(--accent);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.todayButton:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.weekRange {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin: 0;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  height: 36px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.addButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: 60px repeat(7, 1fr);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 600px;
+  user-select: none;
+}
+
+.timeLabelsColumn {
+  background: var(--background);
+  border-right: 1px solid var(--accent);
+}
+
+.timeHeaderCell {
+  height: 60px;
+  border-bottom: 1px solid var(--accent);
+}
+
+.timeLabel {
+  height: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--secondary-text);
+  border-bottom: 1px solid var(--accent);
+}
+
+.dayColumn {
+  border-right: 1px solid var(--accent);
+  position: relative;
+}
+
+.dayColumn:last-child {
+  border-right: none;
+}
+
+.dayHeader {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--accent);
+  background: var(--background);
+}
+
+.dayName {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--primary-text);
+}
+
+.dayDate {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.timeSlotsContainer {
+  position: relative;
+  height: calc(17 * 60px); /* 17 hours * 60px each */
+}
+
+.hourSlot {
+  height: 60px;
+  border-bottom: 1px solid var(--accent);
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.1s ease;
+}
+
+.hourSlot:hover {
+  background-color: rgba(250, 128, 114, 0.1);
+}
+
+.quarterHour {
+  height: 15px;
+  border-bottom: 1px solid rgba(250, 128, 114, 0.2);
+}
+
+.quarterHour:last-child {
+  border-bottom: none;
+}
+
+.timeEntry {
+  position: absolute;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 15px;
+}
+
+.timeEntry:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+}
+
+.entryTitle {
+  font-weight: 500;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.entryTime {
+  font-size: 0.7rem;
+  opacity: 0.9;
+  line-height: 1.1;
+}
+
+.entryProject {
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-top: auto;
+  opacity: 0.9;
+  line-height: 1.1;
+}
+
+.dragSelection {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .calendarContainer {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .calendarHeader {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .calendarGrid {
+    min-width: 700px;
+  }
+
+  .timeLabel {
+    font-size: 0.7rem;
+  }
+
+  .dayName {
+    font-size: 0.75rem;
+  }
+
+  .dayDate {
+    font-size: 1rem;
+  }
+
+  .entryTitle {
+    font-size: 0.7rem;
+  }
+
+  .entryTime,
+  .entryProject {
+    font-size: 0.65rem;
+  }
+}
