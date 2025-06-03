@@ -5,7 +5,7 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Eclipse Tracking",
   description: "Modern time tracking application",
     generator: 'v0.dev'
