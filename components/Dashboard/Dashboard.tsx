@@ -16,7 +16,7 @@ import styles from "@/styles/Dashboard.module.css"
 const Dashboard: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editingEntry, setEditingEntry] = useState<string | null>(null)
-  const [viewMode, setViewMode] = useState<"list" | "calendar">("list")
+  const [viewMode, setViewMode] = useState<"list" | "calendar">("calendar")
   const { entries, activeEntry, getEntryById } = useTimeEntries()
   const { projects } = useProjects()
   const { addNotification } = useNotifications()
@@ -55,18 +55,18 @@ const Dashboard: React.FC = () => {
 
       <div className={styles.viewToggle}>
         <button
-          className={`${styles.viewButton} ${viewMode === "list" ? styles.active : ""}`}
-          onClick={() => setViewMode("list")}
-        >
-          <List size={18} />
-          <span>List View</span>
-        </button>
-        <button
           className={`${styles.viewButton} ${viewMode === "calendar" ? styles.active : ""}`}
           onClick={() => setViewMode("calendar")}
         >
           <Calendar size={18} />
           <span>Calendar View</span>
+        </button>
+        <button
+          className={`${styles.viewButton} ${viewMode === "list" ? styles.active : ""}`}
+          onClick={() => setViewMode("list")}
+        >
+          <List size={18} />
+          <span>List View</span>
         </button>
       </div>
 
