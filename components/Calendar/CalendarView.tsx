@@ -6,7 +6,7 @@ import { useTimeEntries, type TimeEntry } from "@/context/TimeEntriesContext"
 import { useProjects } from "@/context/ProjectsContext"
 import { useNotifications } from "@/context/NotificationsContext"
 import { ChevronLeft, ChevronRight, Plus } from "lucide-react"
-import Modal from "../UI/Modal"
+import Modal from "../UIComponents/Modal"
 import TimeEntryForm from "../TimeEntries/TimeEntryForm"
 import styles from "@/styles/CalendarView.module.css"
 
