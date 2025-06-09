@@ -9,7 +9,7 @@ import TimeEntryList from "../TimeEntries/TimeEntryList"
 import TimeEntryForm from "../TimeEntries/TimeEntryForm"
 import Timer from "../Timer/Timer"
 import CalendarView from "../Calendar/CalendarView"
-import Modal from "../UI/Modal"
+import Modal from "../UIComponents/Modal"
 import { Calendar, List } from "lucide-react"
 import styles from "@/styles/Dashboard.module.css"
 

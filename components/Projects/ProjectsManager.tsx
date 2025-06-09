@@ -5,7 +5,7 @@ import { useState } from "react"
 import { useProjects } from "@/context/ProjectsContext"
 import { useNotifications } from "@/context/NotificationsContext"
 import { Plus, Edit, Trash2, DollarSign } from "lucide-react"
-import Modal from "../UI/Modal"
+import Modal from "../UIComponents/Modal"
 import ProjectForm from "./ProjectForm"
 import styles from "@/styles/ProjectsManager.module.css"
 
