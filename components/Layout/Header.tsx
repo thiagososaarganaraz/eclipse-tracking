@@ -3,7 +3,7 @@
 import type React from "react"
 import { useTheme } from "@/context/ThemeContext"
 import { useTimeEntries } from "@/context/TimeEntriesContext"
-import { Sun, Moon, Clock } from "lucide-react"
+import { Sun, Moon, Eclipse } from "lucide-react"
 import styles from "@/styles/Header.module.css"
 
 const Header: React.FC = () => {
@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Clock className={styles.logoIcon} />
+        <Eclipse className={styles.logoIcon} />
         <h1>Eclipse Tracking</h1>
       </div>
 
