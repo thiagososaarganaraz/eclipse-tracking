@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'node' # Or your specific Node.js version, e.g., '18', '20', or '22'
+          node-version: '20'
 
       # Step 2: Install project dependencies
       - name: Install dependencies
