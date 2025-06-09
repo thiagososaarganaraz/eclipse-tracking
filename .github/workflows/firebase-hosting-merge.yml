@@ -9,21 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Step 1: Install Node.js latest version
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      # Step 2: Install project dependencies
+      # Step 1: Install project dependencies
       - name: Install dependencies
         run: npm install --legacy-peer-deps # Or just 'npm install' if you don't need legacy-peer-deps
 
-      # Step 3: Build the Next.js application
+      # Step 2: Build the Next.js application
       - name: Build Next.js app
         run: npm run build
 
-      # Step 5: Deploy to Firebase Hosting
+      # Step 3: Deploy to Firebase Hosting
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
