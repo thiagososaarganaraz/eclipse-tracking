@@ -4,7 +4,7 @@
   --light-surface: #ffffff;
   --light-primary-text: #1f2937;
   --light-secondary-text: #4b5563;
-  --light-accent: #fa8072;
+  --light-accent: #f76352;
   --light-success: #10b981;
   --light-warning: #f59e0b;
   --light-error: #ef4444;
@@ -14,8 +14,8 @@
   --dark-surface: #2a2a3c;
   --dark-primary-text: #ffffff;
   --dark-secondary-text: #c3c3d1;
-  --dark-accent: #fa8072;
-  --dark-success: #6ee7b7;
+  --dark-accent: #f76352;
+  --dark-success: #1f9c26;
   --dark-warning: #fcd34d;
   --dark-error: #f87171;
 
