@@ -9,11 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Step 1: Install Node.js
+      # Step 1: Install Node.js latest version
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Or your specific Node.js version, e.g., '18', '20', or '22'
+          node-version: 'node' # Or your specific Node.js version, e.g., '18', '20', or '22'
 
       # Step 2: Install project dependencies
       - name: Install dependencies
