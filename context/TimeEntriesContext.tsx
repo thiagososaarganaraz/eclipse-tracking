@@ -71,15 +71,15 @@ export const TimeEntriesProvider: React.FC<{ children: React.ReactNode }> = ({ c
     }
   }, [activeEntry])
 
-  const startTimer = (description = "", projectId = null) => {
+  const startTimer = (description?: string, projectId?: string | null) => {
     if (activeEntry) {
       stopTimer()
     }
 
     const newEntry: TimeEntry = {
       id: generateUUID(),
-      description,
-      projectId,
+      description: description ?? "",
+      projectId: projectId ?? null,
       startTime: new Date().toISOString(),
       endTime: null,
       billable: false,
