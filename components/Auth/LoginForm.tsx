@@ -3,7 +3,7 @@
 import type React from "react"
 import { useState } from "react"
 import { useTheme } from "@/context/ThemeContext"
-import { Clock, Mail, Lock } from "lucide-react"
+import { Mail, Lock, Eclipse } from "lucide-react"
 import styles from "@/styles/LoginForm.module.css"
 
 interface LoginFormProps {
@@ -27,7 +27,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onGoogleLogin, isLoading
       <div className={styles.loginForm}>
         <div className={styles.header}>
           <div className={styles.logo}>
-            <Clock className={styles.logoIcon} />
+            <Eclipse className={styles.logoIcon} />
             <h1>Eclipse Tracking</h1>
           </div>
           <p className={styles.subtitle}>Track your time, boost your productivity</p>
