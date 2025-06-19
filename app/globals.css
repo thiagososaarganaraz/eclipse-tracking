@@ -10,12 +10,12 @@
   --light-error: #ef4444;
 
   /* Dark Theme */
-  --dark-background: #1e1e2e;
-  --dark-surface: #2a2a3c;
+  --dark-background: #101010;
+  --dark-surface: #1f1f1f;
   --dark-primary-text: #ffffff;
-  --dark-secondary-text: #c3c3d1;
+  --dark-secondary-text: #dddfff;
   --dark-accent: #f76352;
-  --dark-success: #1f9c26;
+  --dark-success: #10b981;
   --dark-warning: #fcd34d;
   --dark-error: #f87171;
 

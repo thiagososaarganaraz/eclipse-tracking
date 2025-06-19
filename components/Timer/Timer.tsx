@@ -108,7 +108,7 @@ const Timer: React.FC<TimerProps> = ({ onAddEntry }) => {
           aria-label={activeEntry ? "Stop timer" : "Start timer"}
         >
           {activeEntry ? <Square size={20} /> : <Play size={20} />}
-          <span>{activeEntry ? "Stop" : "Start"}</span>
+          {/* <span>{activeEntry ? "Stop" : "Start"}</span> */}
         </button>
       </div>
     </div>
