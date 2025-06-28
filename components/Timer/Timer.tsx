@@ -5,7 +5,6 @@ import { useState, useEffect } from "react"
 import { useTimeEntries } from "@/context/TimeEntriesContext"
 import { useProjects } from "@/context/ProjectsContext"
 import { useNotifications } from "@/context/NotificationsContext"
-import { Play, Square, Clock } from "lucide-react"
 import ProjectSelector from "../Projects/ProjectSelector"
 import styles from "@/styles/Timer.module.css"
 
@@ -18,7 +17,6 @@ const Timer: React.FC<TimerProps> = ({ onAddEntry }) => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null)
   const [elapsedTime, setElapsedTime] = useState(0)
   const { activeEntry, startTimer, stopTimer } = useTimeEntries()
-  const { projects } = useProjects()
   const { addNotification } = useNotifications()
 
   // Update elapsed time when timer is running
@@ -94,21 +92,6 @@ const Timer: React.FC<TimerProps> = ({ onAddEntry }) => {
           onSelectProject={setSelectedProject}
           disabled={!!activeEntry}
         />
-      </div>
-
-      <div className={styles.controlSection}>
-        <div className={styles.timeDisplay}>
-          <Clock className={styles.clockIcon} />
-          <span className={styles.time}>{formatTime(elapsedTime)}</span>
-        </div>
-        <button
-          className={`${styles.timerButton} ${activeEntry ? styles.stopButton : styles.startButton}`}
-          onClick={activeEntry ? handleStopTimer : handleStartTimer}
-          aria-label={activeEntry ? "Stop timer" : "Start timer"}
-        >
-          {activeEntry ? <Square size={20} /> : <Play size={20} />}
-          {/* <span>{activeEntry ? "Stop" : "Start"}</span> */}
-        </button>
       </div>
     </div>
   )
