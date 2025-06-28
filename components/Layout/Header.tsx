@@ -46,7 +46,7 @@ const Header: React.FC = () => {
 
   // You may want to lift these handlers up if you want notifications
   const handleStartTimer = () => {
-    startTimer("Working...", null) // You can adjust description/project as needed
+    startTimer("", null) // You can adjust description/project as needed
   }
 
   const handleStopTimer = () => {
