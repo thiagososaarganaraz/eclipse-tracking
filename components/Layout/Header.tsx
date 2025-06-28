@@ -8,7 +8,8 @@ import styles from "@/styles/Header.module.css"
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme()
-  const { activeEntry } = useTimeEntries()
+  const { activeEntry, startTimer, stopTimer } = useTimeEntries()
+
 
   return (
     <header className={styles.header}>
@@ -24,7 +25,6 @@ const Header: React.FC = () => {
             <span>Timer Running</span>
           </div>
         )}
-
         <button
           className={styles.themeToggle}
           onClick={toggleTheme}

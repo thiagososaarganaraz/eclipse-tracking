@@ -101,7 +101,6 @@ const Timer: React.FC<TimerProps> = ({ onAddEntry }) => {
           <Clock className={styles.clockIcon} />
           <span className={styles.time}>{formatTime(elapsedTime)}</span>
         </div>
-
         <button
           className={`${styles.timerButton} ${activeEntry ? styles.stopButton : styles.startButton}`}
           onClick={activeEntry ? handleStopTimer : handleStartTimer}
