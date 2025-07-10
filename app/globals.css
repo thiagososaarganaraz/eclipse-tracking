@@ -10,12 +10,12 @@
   --light-error: #ef4444;
 
   /* Dark Theme */
-  --dark-background: #1e1e2e;
-  --dark-surface: #2a2a3c;
+  --dark-background: #191919;
+  --dark-surface: #111111;
   --dark-primary-text: #ffffff;
-  --dark-secondary-text: #c3c3d1;
+  --dark-secondary-text: #dddfff;
   --dark-accent: #f76352;
-  --dark-success: #1f9c26;
+  --dark-success: #10b981;
   --dark-warning: #fcd34d;
   --dark-error: #f87171;
 
@@ -44,6 +44,7 @@ body {
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: var(--background);
   color: var(--primary-text);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -57,8 +58,9 @@ a {
 button,
 input,
 select,
+span,
 textarea {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Dark theme class */
