@@ -46,21 +46,8 @@
 .time {
   font-size: 1.8rem;
   color: var(--primary-text);
-  animation: softBlink 3s ease-in-out infinite;
   transition: opacity 1s ease-in-out;
   letter-spacing: 0.10em;
-}
-
-@keyframes softBlink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .timerButton {
@@ -78,21 +65,12 @@
   background: none;
 }
 
-.startButton {
-  /* You can add a background or color if desired */
-}
-
 .startButton:hover {
   opacity: 0.6;
 }
 
-.stopButton {
-  /* You can add a background or color if desired */
-}
-
 .stopButton:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+  opacity: 0.6;
 }
 
 .activeTimer {
@@ -105,14 +83,6 @@
   border-radius: 20px;
   font-size: 0.875rem;
   font-weight: 500;
-}
-
-.pulse {
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
 }
 
 .timeRunning {
@@ -144,6 +114,10 @@
   100% {
     opacity: 1;
   }
+}
+
+.pulse {
+  animation: pulse 1.5s infinite;
 }
 
 .themeToggle {

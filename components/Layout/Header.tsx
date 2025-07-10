@@ -80,7 +80,11 @@ const Header: React.FC = () => {
       <div className={styles.controls}>
         <div className={styles.timeDisplay}>
           <Clock className={styles.clockIcon} />
-          <span className={styles.time}>{formatTime(elapsedTime)}</span>
+          <span
+            className={`${styles.time} ${activeEntry ? styles.pulse : ""}`}
+          >
+            {formatTime(elapsedTime)}
+          </span>
         </div>
         <button
           className={`${styles.timerButton} ${activeEntry ? styles.stopButton : styles.startButton}`}

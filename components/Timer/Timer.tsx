@@ -16,43 +16,7 @@ const Timer: React.FC<TimerProps> = ({ onAddEntry }) => {
   const [description, setDescription] = useState("")
   const [selectedProject, setSelectedProject] = useState<string | null>(null)
   const [elapsedTime, setElapsedTime] = useState(0)
-  const { activeEntry, startTimer, stopTimer } = useTimeEntries()
-
-  // Update elapsed time when timer is running
-  useEffect(() => {
-    let interval: NodeJS.Timeout
-
-    if (activeEntry) {
-      const startTime = new Date(activeEntry.startTime).getTime()
-
-      interval = setInterval(() => {
-        const now = Date.now()
-        setElapsedTime(Math.floor((now - startTime) / 1000))
-      }, 1000)
-
-      // Set description and project from active entry
-      setDescription(activeEntry.description)
-      setSelectedProject(activeEntry.projectId)
-    } else {
-      setElapsedTime(0)
-    }
-
-    return () => {
-      if (interval) clearInterval(interval)
-    }
-  }, [activeEntry])
-
-  const formatTime = (seconds: number) => {
-    const hours = Math.floor(seconds / 3600)
-    const minutes = Math.floor((seconds % 3600) / 60)
-    const secs = seconds % 60
-
-    return [
-      hours.toString().padStart(2, "0"),
-      minutes.toString().padStart(2, "0"),
-      secs.toString().padStart(2, "0"),
-    ].join(":")
-  }
+  const { activeEntry } = useTimeEntries()
 
   return (
     <div className={styles.timer}>
