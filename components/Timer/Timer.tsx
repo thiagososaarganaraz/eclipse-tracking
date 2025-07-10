@@ -17,7 +17,6 @@ const Timer: React.FC<TimerProps> = ({ onAddEntry }) => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null)
   const [elapsedTime, setElapsedTime] = useState(0)
   const { activeEntry, startTimer, stopTimer } = useTimeEntries()
-  const { addNotification } = useNotifications()
 
   // Update elapsed time when timer is running
   useEffect(() => {
@@ -42,26 +41,6 @@ const Timer: React.FC<TimerProps> = ({ onAddEntry }) => {
       if (interval) clearInterval(interval)
     }
   }, [activeEntry])
-
-  const handleStartTimer = () => {
-    startTimer(description, selectedProject)
-    addNotification({
-      type: "success",
-      message: "Timer started",
-      duration: 3000,
-    })
-  }
-
-  const handleStopTimer = () => {
-    stopTimer()
-    addNotification({
-      type: "info",
-      message: "Timer stopped",
-      duration: 3000,
-    })
-    setDescription("")
-    setSelectedProject(null)
-  }
 
   const formatTime = (seconds: number) => {
     const hours = Math.floor(seconds / 3600)

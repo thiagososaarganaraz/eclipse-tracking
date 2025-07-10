@@ -6,13 +6,18 @@ import { useTheme } from "@/context/ThemeContext"
 import { useTimeEntries } from "@/context/TimeEntriesContext"
 import { Sun, Moon, Eclipse, Play, Square, Clock } from "lucide-react"
 import styles from "@/styles/Header.module.css"
+import { useNotifications } from "@/context/NotificationsContext"
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme()
   const { activeEntry, startTimer, stopTimer } = useTimeEntries()
+  const { addNotification } = useNotifications()
+
 
   // Timer logic
   const [elapsedTime, setElapsedTime] = useState(0)
+  const [description, setDescription] = useState("")
+  const [selectedProject, setSelectedProject] = useState<string | null>(null)
 
   useEffect(() => {
     let interval: NodeJS.Timeout
@@ -46,11 +51,23 @@ const Header: React.FC = () => {
 
   // You may want to lift these handlers up if you want notifications
   const handleStartTimer = () => {
-    startTimer("", null) // You can adjust description/project as needed
+    startTimer(description, selectedProject)
+    addNotification({
+      type: "success",
+      message: "Timer started",
+      duration: 3000,
+    })
   }
 
   const handleStopTimer = () => {
     stopTimer()
+    addNotification({
+      type: "info",
+      message: "Timer stopped",
+      duration: 3000,
+    })
+    setDescription("")
+    setSelectedProject(null)
   }
 
   return (

@@ -44,10 +44,23 @@
 }
 
 .time {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.8rem;
   color: var(--primary-text);
-  font-family: "Courier New", monospace;
+  animation: softBlink 3s ease-in-out infinite;
+  transition: opacity 1s ease-in-out;
+  letter-spacing: 0.10em;
+}
+
+@keyframes softBlink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .timerButton {
@@ -55,7 +68,7 @@
   align-items: center;
   gap: 0.5rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 8px; 
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -70,8 +83,7 @@
 }
 
 .startButton:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+  opacity: 0.6;
 }
 
 .stopButton {
@@ -140,7 +152,7 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border: 1px solid var(--accent);
+  border: 0 solid var(--accent);
   background: var(--surface);
   color: var(--accent);
   border-radius: 8px;
@@ -150,7 +162,7 @@
 
 .themeToggle:hover {
   background: var(--accent);
-  color: white;
+  color: var(--surface);
 }
 
 @media (max-width: 768px) {
