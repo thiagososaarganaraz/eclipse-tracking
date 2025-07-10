@@ -59,7 +59,9 @@ export const TimeEntriesProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // Save entries to localStorage whenever they change
   useEffect(() => {
+    if (entries.length > 0) {
     localStorage.setItem("timeEntries", JSON.stringify(entries))
+    }
   }, [entries])
 
   // Save active entry to localStorage whenever it changes

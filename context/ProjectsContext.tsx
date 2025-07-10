@@ -64,9 +64,11 @@ export const ProjectsProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
   }, [])
 
-  // Save projects to localStorage whenever they change
+  // Save projects to localStorage whenever they change, but not if empty on first load
   useEffect(() => {
-    localStorage.setItem("projects", JSON.stringify(projects))
+    if (projects.length > 0) {
+      localStorage.setItem("projects", JSON.stringify(projects))
+    }
   }, [projects])
 
   const addProject = (project: Omit<Project, "id" | "createdAt" | "updatedAt">) => {
