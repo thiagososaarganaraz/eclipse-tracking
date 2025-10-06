@@ -50,7 +50,7 @@ const CalendarView = () => {
   const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
   // Hours for the day (6 AM to 10 PM)
-  const hours = Array.from({ length: 17 }, (_, i) => i + 6)
+  const hours = Array.from({ length: 24 }, (_, i) => i + 0)
 
   // Navigate to previous week
   const goToPreviousWeek = () => {
@@ -305,7 +305,8 @@ const CalendarView = () => {
           <div className={styles.timeHeaderCell}></div>
           {hours.map((hour) => (
             <div key={hour} className={styles.timeLabel}>
-              {hour > 12 ? `${hour - 12} PM` : hour === 12 ? "12 PM" : `${hour} AM`}
+              {/* {hour > 12 ? `${hour - 12} PM` : hour === 12 ? "12 PM" : `${hour} AM`} */}
+              {hour}:00
             </div>
           ))}
         </div>
